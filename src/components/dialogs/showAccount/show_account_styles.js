@@ -10,8 +10,8 @@ const show_account = StyleSheet.create({
   },
   dialog_text: {
     alignSelf: 'center',
-    fontSize: 20,
-    padding: 10
+    fontSize: 16,
+    padding: 12
   },
   section_title: {
     alignSelf: 'center',
@@ -35,9 +35,11 @@ const show_account = StyleSheet.create({
   },
   dialog_text: {
     alignSelf: 'center',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
-    color: '#03A9F4'
+    color: '#03A9F4',
+    marginLeft: 10,
+    marginRight: 10
   }
 })
 

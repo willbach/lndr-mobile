@@ -60,8 +60,8 @@ export class ShowAccount extends Component {
         <Text style={show_account.dialog_text}>USD</Text>
         <Text style={show_account.section_title}>My Foundation ID</Text>
         <Text style={show_account.dialog_text}>Test</Text>
-        <Text style={show_account.section_title}>Your key fingerprint</Text>
-        <Text style={show_account.dialog_text}>{this.props.privateKey ? this.props.privateKey.fingerPrint : 'None'}</Text>
+        <Text style={show_account.section_title}>Your Public Key</Text>
+        <Text style={show_account.dialog_text}>{this.props.privateKey ? this.props.privateKey.xpubkey : 'None'}</Text>
 
         <TouchableHighlight
           underlayColor={'#fff'}
