@@ -104,13 +104,14 @@ export class AppContainer extends Component {
       console.log('get data')
 
       const actions = this.props.actions
+
       const friends = {
         table: 'friends',
         action: 'select'
       }
 
       executeTransaction(friends, (result) => {
-        actions.updateFriends(result.rows._array)
+        actions.updateFriends(result.rows.raw())
       })
 
       const pending = {
@@ -119,7 +120,7 @@ export class AppContainer extends Component {
       }
 
       executeTransaction(pending, (result) => {
-        const data = result.rows._array
+        const data = result.rows.raw()
 
         actions.updatePending(data)
         actions.updateCount(data.length)
@@ -131,7 +132,7 @@ export class AppContainer extends Component {
       }
 
       executeTransaction(debts, (result) => {
-        const data = result.rows._array
+        const data = result.rows.raw()
         actions.updateDebts(data)
       })
     })

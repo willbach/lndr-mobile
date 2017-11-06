@@ -106,7 +106,7 @@ export function insertRecord (options, success) {
   db.transaction(
     tx => {
       tx.executeSql(insert, options.data)
-      tx.executeSql('SELECT * FROM ' + table, [], (transaction, result) => success(result.rows._array))
+      tx.executeSql('SELECT * FROM ' + table, [], (transaction, result) => success(result.rows.raw()))
     },
     (err) => {
       console.log(err)
