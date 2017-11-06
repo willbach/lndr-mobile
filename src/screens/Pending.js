@@ -10,16 +10,10 @@ import styles from './styles'
 
 // import {FRIEND_PENDING_MOCK_DATA} from '../test/mock'
 
-// This will almost be moved to some sort of state management class, using null as ref pointer could be problematic
-const PendingComponentState = {
-  titleCounter: null
-}
-
 export class Pending extends Component {
   static navigationOptions = {
     tabBarLabel: () =>
-    <PendingTitleCounter
-      ref={(counter) => PendingComponentState.titleCounter = counter}/>
+    <PendingTitleCounter/>
   }
 
   constructor (props) {
