@@ -66,7 +66,7 @@ export default class Login extends Component {
       retrieveHashedPassword().then(referenceHashedPassword => {
         const hashedPassword = mnemonicInstance.toSeed(PASSWORD_SALT + this.state.password)
 
-        if (hashedPassword.join('.') !== referenceHashedPassword.data.join('.')) {
+        if (Object.values(hashedPassword).join('.') !== referenceHashedPassword.data.join('.')) {
           this.statusAlert.display({
             type: 'warn',
             title: 'Incorrect password',
