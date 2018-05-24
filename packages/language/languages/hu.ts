@@ -375,5 +375,10 @@ export default {
     shell: `Baráti felkérés`,
     message: `Friend kérések`,
     request: F => `${F} akarja, hogy barátok veled! `,
+  },
+
+  privacyPolicy: {
+    link: `lndr.io/terms/`,
+    message: `Az alábbi linkre kattintva Ön megerősíti, hogy elolvasta és elfogadja a Blockmason adatvédelmi irányelveit. Blockmason használhatja az e-mail címét, hogy küldjön frissítéseket Blockmason és LNDR. Itt van egy link, hogy az adatvédelmi politika:`
   }
 }

@@ -10,7 +10,7 @@ import fr from './languages/fr'
 import hu from './languages/hu'
 import it from './languages/it'
 import ko from './languages/ko'
-import jp from './languages/jp'
+import ja from './languages/ja'
 import nl from './languages/nl'
 import nb from './languages/nb'
 import no from './languages/no'
@@ -33,9 +33,9 @@ export const language = locale.slice(0, 2)
 
 export const country = locale.slice(3, 5)
 
-const languages = { da, de, el, en, es, fi, fr, hu, it, ko, jp, nl, nb, no, pl, pt, sv, "zh-CN": zh_CN }
+const languages = { da, de, el, en, es, fi, fr, hu, it, ko, ja, nl, nb, no, pl, pt, sv, zh: zh_CN }
 
-let exportLanguage = language.indexOf('zh') === 0 ? languages[locale] : languages[language]
+let exportLanguage = languages[language]
 
 if (exportLanguage === undefined) {
   exportLanguage = languages.en
