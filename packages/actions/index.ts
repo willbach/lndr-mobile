@@ -78,7 +78,7 @@ export const initializeStorage = () => {
       let { ethBalance, ethExchange, bcptBalance } = await getEthInfo(storedUser)
       let ucacAddresses = await creditProtocol.getUcacAddresses()
       let ethTransactions = await ethTransactionsStorage.get()
-      const payload = { hasStoredUser: true, welcomeComplete: true, user: storedUser, notificationsEnabled, ethBalance, 
+      const payload = { hasStoredUser: true, welcomeComplete: true, privacyPolicyVerified: true, user: storedUser, notificationsEnabled, ethBalance, 
         ethExchange, bcptBalance, ucacAddresses, ethTransactions }
       dispatch(setState(payload))
 
@@ -95,7 +95,7 @@ export const initializeStorage = () => {
       dispatch(setState(payload))
 
     } else if (storedMnemonic) {
-      dispatch(setState({ hasStoredUser: true, welcomeComplete: true, notificationsEnabled }))
+      dispatch(setState({ hasStoredUser: true, welcomeComplete: true, privacyPolicyVerified: true, notificationsEnabled }))
     }
     dispatch(setState({ isInitializing: false, notificationsEnabled }))
   }
@@ -1065,11 +1065,11 @@ const triggerTouchId = (user, notificationsEnabled) => {
   return TouchID.authenticate('Please sign in using your fingerprint', optionalConfigObject)
   .then( () => {
     sessionStorage.set(moment())
-    return { hasStoredUser: true, welcomeComplete: true, notificationsEnabled, user }
+    return { hasStoredUser: true, welcomeComplete: true, privacyPolicyVerified: true, notificationsEnabled, user }
   })
   .catch(error => {
     console.log('Touch ID login Error: ', error)
-    return { hasStoredUser: true, welcomeComplete: true, notificationsEnabled }
+    return { hasStoredUser: true, welcomeComplete: true, privacyPolicyVerified: true, notificationsEnabled }
   })
 }
 
