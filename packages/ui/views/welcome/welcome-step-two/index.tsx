@@ -68,7 +68,7 @@ export default class WelcomeStepTwoView extends Component<Props, State> {
 
     const settingsButton = (<View style={[accountStyle.settingsButton, {top: 0}]}>
       <View style={accountStyle.settingsTriangleLeft}/>
-      <TouchableHighlight onPress={() => null} underlayColor='aqua'>
+      <TouchableHighlight onPress={() => null} underlayColor='transparent'>
         <View style={accountStyle.settingsBackground}>
           <Image source={require('images/settings.png')} style={tabStyle.settingsButton} />
         </View>

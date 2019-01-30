@@ -54,7 +54,7 @@ class DashboardShell extends Component<Props> {
     const settingsButton = !hideSettings &&
       <View style={style.settingsButton}>
         <View style={style.settingsTriangleLeft}/>
-        <TouchableHighlight onPress={() => this.props.navigation.navigate('MyAccount')} underlayColor='aqua'>
+        <TouchableHighlight onPress={() => this.props.navigation.navigate('MyAccount')} underlayColor='transparent'>
           <View style={style.settingsBackground}>
             <Image source={require('images/settings.png')} style={tabStyle.settingsButton} />
           </View>
