@@ -243,7 +243,7 @@ class RequestDetail extends Component<Props, State> {
 
     if (content instanceof InviteTransaction) {
       direction = content.direction
-      friend = new Friend(content.address, content.submitterNickname || '')
+      friend = content.address === user.address ? new Friend('', inviteLink) : new Friend(content.address, content.submitterNickname || '')
     }
     
     if (content instanceof PendingTransaction || content instanceof InviteTransaction) {
